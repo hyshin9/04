@@ -1,20 +1,16 @@
 #include <stdio.h>
 
 int main (int argc, char *argv[]) {
-    unsigned int x;
-    int b;
+    int h, m, s, t; //hour, minute, second, time
 
-    printf("input a number : ");
-    scanf("%ui", &x);
+    printf("input the second : ");
+    scanf("%i", &t);
 
-    for (b=0; x != 0; x >>= 1) {
-        if (x & 1)
-        {
-            b++;
-        }
-    }
+    h = t / 3600;
+    m = (t % 3600) / 60;
+    s = t % 60;
 
-    printf("The result is : %i\n", b);
+    printf("The time for %i second is %i : %i : %i\n", t, h, m, s);
 
     return 0;
 }
